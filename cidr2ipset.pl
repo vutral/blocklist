@@ -7,7 +7,8 @@ my $cidrfile = "level1.cidr";
 
 open(CIDRF,$cidrfile);
 
-print "ipset create blocklist hash:net\n";
+print "ipset destroy blocklist\n";
+print "ipset create blocklist hash:net maxelem 300000\n";
 while(<CIDRF>) {
   my $line = $_;
   $line =~ s/\n//g;
