@@ -1,0 +1,9 @@
+iptables -N BLOCKLIST
+iptables -A INPUT -m set --match-set blocklist src,dst -j BLOCKLIST
+iptables -A FORWARD -m set --match-set blocklist src,dst -j BLOCKLIST
+iptables -A OUTPUT -m set --match-set blocklist src,dst -j BLOCKLIST
+iptables -A BLOCKLIST -m set --match-set allow src,dst -j RETURN
+iptables -A BLOCKLIST -m set ! --match-set blocklist src,dst -j RETURN
+iptables -A BLOCKLIST -j LOG
+iptables -A BLOCKLIST -j DROP
+

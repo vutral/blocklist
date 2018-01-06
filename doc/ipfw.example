@@ -1,0 +1,5 @@
+ipfw add 05000 deny ip from 'table(5000)' to any out
+ipfw add 05001 deny ip from any to 'table(5000)' out
+ipfw add 05002 deny ip from 'table(5000)' to any in
+ipfw add 05003 deny ip from any to 'table(5000)' in
+
