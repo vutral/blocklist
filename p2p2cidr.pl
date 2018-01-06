@@ -5,8 +5,13 @@ use warnings;
 use Net::CIDR;
 my $debug=0;
 
-my $p2pfile = "level1.p2p";
-my $cidrfile = "level1.cidr";
+my $NAME="level1";
+if($ARGV[0] ne '') {
+  $NAME=$ARGV[0];
+}
+
+my $p2pfile = "$NAME.p2p";
+my $cidrfile = "$NAME.cidr";
 open(P2P, $p2pfile);
 open(CIDRF, '>'.$cidrfile);
 while(<P2P>) {

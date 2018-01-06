@@ -3,4 +3,5 @@
 *.cidr
 .hgignore
 .hg
+.opnsense
 

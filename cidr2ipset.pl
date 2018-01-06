@@ -3,7 +3,12 @@
 use strict;
 use warnings;
 
-my $cidrfile = "level1.cidr";
+my $NAME='level1';
+if(defined($ARGV[0]) && $ARGV[0] ne '') {
+  $NAME = $ARGV[0];
+}
+
+my $cidrfile = "$NAME.cidr";
 
 open(CIDRF,$cidrfile);
 
