@@ -1,3 +1,5 @@
 *.p2p
 *.cidr
+.hgignore
+.hg
 
