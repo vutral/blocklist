@@ -1,4 +1,5 @@
 *.p2p
+*.p2p.gz
 *.cidr
 .hgignore
 .hg
